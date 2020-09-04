@@ -1,0 +1,38 @@
+@import "variables";
+@import "mixins";
+@import "mixins-cross-browser";
+@import "mixins_breakpoints";
+
+#root {
+  background: url("../images/bg-mobile.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.attribution {
+  position: fixed;
+  bottom: 0;
+  @include flex(column, center, center, 0.8rem);
+
+  padding: 1.6rem 0;
+  width: 100%;
+
+  font-size: 1.4rem;
+  background: $pale-blue;
+  color: $dark-blue;
+
+  p > a {
+    font-weight: bold;
+    color: $very-dark-blue;
+
+    @include transition(all 0.2s);
+
+    &:hover {
+      font-size: 1.8rem;
+    }
+  }
+
+  @include response-above(md) {
+    flex-direction: row;
+  }
+}

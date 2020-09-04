@@ -1,0 +1,36 @@
+#root {
+  background: url("../images/bg-mobile.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.attribution {
+  position: fixed;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1.6rem 0;
+  width: 100%;
+  font-size: 1.4rem;
+  background: #dddbff;
+  color: #1d2c67;
+}
+.attribution p > a {
+  font-weight: bold;
+  color: #0c122c;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+.attribution p > a:hover {
+  font-size: 1.8rem;
+}
+@media (min-width: 768px) {
+  .attribution {
+    flex-direction: row;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */
