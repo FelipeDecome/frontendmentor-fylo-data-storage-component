@@ -4,9 +4,230 @@
 @import "mixins_breakpoints";
 
 #root {
-  background: url("../images/bg-mobile.png");
+  @include flex(column, center, center);
+
+  background: $very-dark-blue;
+
+  background-image: url("../images/bg-mobile.png");
   background-size: cover;
   background-repeat: no-repeat;
+
+  @include response-above(md) {
+    background-image: url("../images/bg-desktop.png");
+    background-size: 100% 50%;
+    background-position-x: left;
+    background-position-y: bottom;
+  }
+}
+
+.app-container {
+  @include flex(column, center, center, 1.6rem);
+
+  width: 90%;
+  max-width: 32.6rem;
+
+  @include response-above(md) {
+    flex-direction: row;
+    align-items: flex-end;
+    gap: 3rem;
+    max-width: 92rem;
+
+    .header {
+      max-width: 35rem;
+    }
+
+    .upload {
+      position: relative;
+      .upload__container {
+        text-align: left;
+      }
+
+      .upload__space-left-container {
+        position: absolute;
+        top: -1.2rem;
+        right: 3.2rem;
+
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: -2rem;
+          right: 0;
+
+          border-top: 2rem solid transparent;
+          border-bottom: 2rem solid transparent;
+
+          border-right: 2.4rem solid $texts;
+        }
+      }
+    }
+  }
+}
+
+.header {
+  @include flex(column, center, null, 3.2rem);
+
+  padding: 4rem;
+
+  @include border-radius(1rem 10rem 1rem 1rem);
+
+  .header__brand {
+    display: inherit;
+
+    fill: $pale-blue;
+    cursor: pointer;
+    @include transition(all 0.2s);
+
+    &:hover {
+      fill: $texts;
+    }
+  }
+
+  .header__nav-options {
+    @include flex(null, null, null, 1.2rem);
+
+    .header__nav-buttons {
+      @include flex(null, center, center);
+
+      width: 4.8rem;
+      height: 4.8rem;
+
+      @include border-radius(1rem);
+      border: 0;
+      background: $blue;
+      cursor: pointer;
+
+      &,
+      .header__nav-buttons-icon {
+        @include transition(all 0.2s);
+      }
+
+      &:hover {
+        transform: scale(1.2);
+        background: $very-dark-blue;
+
+        .header__nav-buttons-icon {
+          fill: $pale-blue;
+        }
+      }
+
+      .header__nav-buttons-text {
+        display: none;
+      }
+
+      .header__nav-buttons-icon {
+        display: flex;
+        fill: $icons;
+      }
+    }
+  }
+}
+
+.upload {
+  width: 100%;
+
+  .upload__container {
+    @include border-radius(1.2rem);
+
+    text-align: center;
+
+    padding: 3.2rem 3.2rem 5.4rem;
+
+    .upload__space-used {
+      color: $texts;
+
+      span {
+        font-weight: 700;
+      }
+    }
+
+    .upload__storage {
+      margin-top: 1.8rem;
+
+      .upload__storage-bar {
+        width: 100%;
+        height: 2rem;
+        padding: 0.3rem;
+
+        background: $blue;
+
+        &,
+        span {
+          @include border-radius(1rem);
+        }
+
+        span,
+        & span::after {
+          content: "";
+          display: block;
+        }
+
+        span {
+          position: relative;
+          width: 81.5%;
+          height: 100%;
+
+          @include animation(storageBar 1s ease 0.4s backwards);
+
+          @include linear-gradient(
+            #{left,
+            $bar-first-color + "," + $bar-second-color}
+          );
+        }
+
+        & span::after {
+          position: absolute;
+          top: 0.2rem;
+          right: 0.2rem;
+
+          width: 1rem;
+          height: 1rem;
+
+          @include border-radius(50%);
+
+          background: $texts;
+        }
+      }
+
+      .upload__value {
+        @include flex(null, space-between);
+        margin-top: 1.2rem;
+
+        color: $texts;
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .upload__space-left-container {
+    @include flex(null, center, center);
+
+    margin: -3.6rem auto;
+    height: 7.2rem;
+    width: 18rem;
+
+    @include border-radius(1rem);
+    background: $texts;
+
+    .upload__space-left {
+      @include flex(null, center, center, 1.2rem);
+
+      color: $grayish-blue;
+      font-weight: 700;
+      font-size: 1.3rem;
+
+      & > span {
+        color: $very-dark-blue;
+        font-size: 3.8rem;
+      }
+    }
+  }
+}
+
+.header,
+.upload__container {
+  width: 100%;
+  background: $dark-blue;
 }
 
 .attribution {
@@ -17,9 +238,8 @@
   padding: 1.6rem 0;
   width: 100%;
 
-  font-size: 1.4rem;
-  background: $pale-blue;
-  color: $dark-blue;
+  background: $texts;
+  color: $blue;
 
   p > a {
     font-weight: bold;
@@ -34,5 +254,11 @@
 
   @include response-above(md) {
     flex-direction: row;
+  }
+}
+
+@include keyframes(storageBar) {
+  from {
+    width: 6%;
   }
 }

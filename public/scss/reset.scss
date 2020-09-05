@@ -27,12 +27,6 @@ body {
   font: 500 1.4rem Raleway;
 }
 
-#root {
-  @include flex(column, center, center);
-
-  background: $very-dark-blue;
-}
-
 @include response-above(md) {
   :root {
     font-size: 62.5%;

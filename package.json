@@ -1,0 +1,28 @@
+{
+  "name": "frontendmentor-fylo-data-storage-component",
+  "version": "1.0.0",
+  "description": "A challenge from frontend mentor to build a data storage component",
+  "main": "dist/app.js",
+  "scripts": {
+    "start": "node ./server.js",
+    "build": "webpack",
+    "prod": "node dist/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FelipeDecome/frontendmentor-fylo-data-storage-component.git"
+  },
+  "author": "Felipe Decome <felipe.decome@hotmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FelipeDecome/frontendmentor-fylo-data-storage-component/issues"
+  },
+  "homepage": "https://github.com/FelipeDecome/frontendmentor-fylo-data-storage-component#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
+  }
+}
