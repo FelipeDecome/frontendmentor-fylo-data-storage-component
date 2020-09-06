@@ -6,6 +6,9 @@
 
 Thanks for checking my solution in this front-end coding challenge.
 
+You can check my challenge solution on Frontend Mentor [clicking here](https://www.frontendmentor.io/solutions/fylo-data-storage-with-sass-DekeARc3L) <br/>
+And my live preview [clicking here](https://frontendmentor-fylo-data-storage-component.vercel.app/)
+
 This challenge is completely free. If you want to try you can find it and other challenges on: [Frontend Mentor](https://www.frontendmentor.io)
 
 **To do this challenge, you need a basic understanding of HTML and CSS.**
