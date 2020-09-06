@@ -16,9 +16,8 @@ The challenge was to build a data storage component and get it looking as close 
 
 I could use any tools i prefer to help me complete the challenge. So I decide to pratice SASS even more and use a metodology to organize my code
 
-### Goals
-
-**Your users should be able to:
+## Goals
+### Your users should be able to:
 
 [x] View the optimal layout for the site depending on their device's screen size
 
